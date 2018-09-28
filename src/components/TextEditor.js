@@ -5,9 +5,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 class TextEditor extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="text-editor">

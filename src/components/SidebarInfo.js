@@ -20,6 +20,23 @@ class SidebarInfo extends React.Component {
       }
     };
   }
+
+  toggleMicrophone = () => {
+    if (!this.state.microphoneAcitve) {
+      this.props.startListening();
+      this.setState({
+        microphoneAcitve: true,
+        microphoneClass: 'animation'
+      });
+    } else {
+      this.props.stopListening();
+      this.setState({
+        microphoneAcitve: false,
+        microphoneClass: ''
+      });
+    }
+  };
+
   render() {
     const pageText =
       this.props.pageLang === 'en'
@@ -28,7 +45,11 @@ class SidebarInfo extends React.Component {
     return (
       <div className="sidebarinfo">
         <div className="dictationLang">
-          <div id="microphoneIcon" className={this.state.microphoneClass}>
+          <div
+            id="microphoneIcon"
+            className={this.state.microphoneClass}
+            onClick={this.toggleMicrophone}
+          >
             <img src={microphoneIcon} />
           </div>
           <div className="lang-select">
@@ -39,7 +60,7 @@ class SidebarInfo extends React.Component {
         <div className="dicatationInfo">
           <div className="dictationOn">{pageText.dictationTitle}</div>
           <div className="dictationText" id="transcript">
-            {}
+            {this.props.transcript}
           </div>
         </div>
       </div>

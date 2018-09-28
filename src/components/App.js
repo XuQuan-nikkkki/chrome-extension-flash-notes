@@ -5,6 +5,18 @@ import Header from '../components/Header';
 import TextEditor from '../components/TextEditor';
 import Sidebar from '../components/Sidebar';
 
+import PropTypes from 'prop-types';
+import SpeechRecognition from 'react-speech-recognition';
+
+const propTypes = {
+  browserSupportsSpeechRecognition: PropTypes.bool,
+  transcript: PropTypes.string,
+  recognition: PropTypes.object,
+  startListening: PropTypes.func,
+  stopListening: PropTypes.func,
+  resetTranscript: PropTypes.func
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +57,22 @@ class App extends Component {
   };
 
   render() {
+    const {
+      transcript,
+      resetTranscript,
+      browserSupportsSpeechRecognition,
+      startListening,
+      stopListening,
+      recognition
+    } = this.props;
+    // this.props.recognition.lang = 'en-US';
+
+    if (!browserSupportsSpeechRecognition) {
+      this.setState({
+        editorContent: "This browser doesn't support speech recognition"
+      });
+    }
+
     return (
       <div className="App">
         <Header
@@ -59,6 +87,10 @@ class App extends Component {
           <Sidebar
             content={this.state.editorContent}
             pageLang={this.state.pageLang.lang}
+            transcript={this.props.transcript}
+            resetTranscript={this.props.resetTranscript}
+            startListening={this.props.startListening}
+            stopListening={this.props.stopListening}
           />
         </div>
       </div>
@@ -66,4 +98,9 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = propTypes;
+const options = {
+  autoStart: false
+};
+
+export default SpeechRecognition(options)(App);
