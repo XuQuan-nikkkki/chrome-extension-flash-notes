@@ -1,17 +1,18 @@
 import React from 'react';
 import '../styles/Header.css';
 
-import logo from '../img/logo.png';
+import logo from '../img/logo-512.png';
 
 class Header extends React.Component {
   render() {
     const title =
       this.props.pageLang.lang === 'en' ? 'Flash Notes' : '闪念笔记';
     const style = this.props.pageLang.lang === 'en' ? {} : { marginTop: 10 };
+    const imgStyle = { height: 65, marginTop: 7 };
     return (
       <div className="header">
         <div className="title">
-          <img src={logo} height="80" className="App-logo" alt="logo" />
+          <img src={logo} style={imgStyle} className="App-logo" alt="logo" />
           <h1 style={style}>{title}</h1>
         </div>
         <div className="page-language">
