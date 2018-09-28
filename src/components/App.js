@@ -52,16 +52,9 @@ class App extends Component {
   };
 
   changeEditorContent = content => {
-    // if(this.props.listening){
-    //   let newContent = content + "new";
-    //   this.setState({
-    //     editorContent: newContent
-    //   });
-    // } else {
     this.setState({
       editorContent: content
     });
-    // }
   };
 
   setDictationLang = event => {
@@ -86,7 +79,7 @@ class App extends Component {
         editorContent: "This browser doesn't support speech recognition"
       });
     }
-
+    console.log(this.state.editorContent);
     return (
       <div className="App">
         <Header
