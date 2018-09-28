@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  background: rgba(0,0,0, 0.5);
+  height: 80px;
+  padding: 0;
+}
+
+.title {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.title h1 {
+  font-size: 45px;
+  color: #fff;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.page-language {
+  float: right;
+  margin-right: 100px;
+  margin-top: -40px;
+  display: flex;
+}
+
+.page-language div {
+  background: #DEDEDE;
+  height: 26px;
+  width: 80px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 0.85em;
+}
+div.selected {
+  background: #fff;
+}
+#en {
+  border-right: 1px solid black;
+  border-radius: 5px 0 0 5px
+}
+
+#ch {
+  border-radius: 0 5px 5px 0;
+}
+
