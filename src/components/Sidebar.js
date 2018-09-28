@@ -20,7 +20,10 @@ class Sidebar extends React.Component {
           editorContent={this.props.editorContent}
           changeEditorContent={this.props.changeEditorContent}
         />
-        <SidebarSharing pageLang={this.props.pageLang} />
+        <SidebarSharing
+          pageLang={this.props.pageLang}
+          content={this.props.content}
+        />
       </div>
     );
   }

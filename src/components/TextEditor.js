@@ -35,6 +35,7 @@ class TextEditor extends React.Component {
     var range = this.quillRef.getSelection();
     let position = range ? range.index : this.props.editorContent.length;
     this.quillRef.insertText(position, newContent);
+    this.props.getContent(editor.getText());
     this.props.resetTranscript();
   };
 

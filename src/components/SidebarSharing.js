@@ -2,8 +2,16 @@ import React from 'react';
 import '../styles/SidebarSharing.css';
 
 import { Helmet } from 'react-helmet';
+let FileSaver = require('file-saver');
 
 class SidebarSharing extends React.Component {
+  saveFile = () => {
+    let file = new File([this.props.content], 'Flash Notes file', {
+      type: 'text/plain;charset:utf-8'
+    });
+    FileSaver.saveAs(file);
+  };
+
   render() {
     return (
       <div className="sidebar-sharing">
@@ -21,7 +29,7 @@ class SidebarSharing extends React.Component {
         <div className="icons">
           <ul>
             <li>
-              <button>保存文件</button>
+              <button onClick={this.saveFile}>保存文件</button>
             </li>
             <li>
               <a

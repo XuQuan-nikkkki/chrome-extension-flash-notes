@@ -28,7 +28,8 @@ class App extends Component {
         enSelected: 'selected',
         chSelected: ''
       },
-      editorContent: ''
+      editorContent: '',
+      content: ''
     };
   }
   changePageLang = lang => {
@@ -54,6 +55,12 @@ class App extends Component {
   changeEditorContent = content => {
     this.setState({
       editorContent: content
+    });
+  };
+
+  getContent = content => {
+    this.setState({
+      content: content
     });
   };
 
@@ -93,6 +100,7 @@ class App extends Component {
             transcript={this.props.transcript}
             resetTranscript={this.props.resetTranscript}
             finalTranscript={this.props.finalTranscript}
+            getContent={this.getContent}
           />
           <Sidebar
             content={this.state.editorContent}
