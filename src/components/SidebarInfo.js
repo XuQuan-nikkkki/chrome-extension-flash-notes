@@ -8,7 +8,6 @@ class SidebarInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      microphoneAcitve: false,
       microphoneClass: '',
       pageText: {
         en: {
@@ -24,23 +23,21 @@ class SidebarInfo extends React.Component {
   }
 
   toggleMicrophone = () => {
-    if (!this.state.microphoneAcitve) {
+    if (!this.props.listening) {
       this.props.startListening();
       this.setState({
-        microphoneAcitve: true,
         microphoneClass: 'animation'
       });
     } else {
       this.props.stopListening();
       this.setState({
-        microphoneAcitve: false,
         microphoneClass: ''
       });
     }
   };
 
   selectDictationLang = event => {
-    if (this.state.microphoneAcitve) {
+    if (this.props.listening) {
       this.toggleMicrophone();
       this.props.setDictationLang(event);
       this.toggleMicrophone();
@@ -82,9 +79,11 @@ class SidebarInfo extends React.Component {
         </div>
         <div className="dicatationInfo">
           <div className="dictationOn">{pageText.dictationTitle}</div>
-          <div className="dictationText" id="transcript">
-            {this.props.transcript}
-          </div>
+          <input
+            className="dictationText"
+            id="transcript"
+            value={this.props.transcript}
+          />
         </div>
       </div>
     );

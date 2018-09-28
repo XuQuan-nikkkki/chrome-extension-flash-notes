@@ -10,6 +10,7 @@ import SpeechRecognition from 'react-speech-recognition';
 
 const propTypes = {
   browserSupportsSpeechRecognition: PropTypes.bool,
+  listening: PropTypes.bool,
   transcript: PropTypes.string,
   recognition: PropTypes.object,
   startListening: PropTypes.func,
@@ -51,14 +52,20 @@ class App extends Component {
   };
 
   changeEditorContent = content => {
+    // if(this.props.listening){
+    //   let newContent = content + "new";
+    //   this.setState({
+    //     editorContent: newContent
+    //   });
+    // } else {
     this.setState({
       editorContent: content
     });
+    // }
   };
 
   setDictationLang = event => {
     this.props.recognition.lang = event.target.value;
-    console.log(this.props.recognition.lang);
   };
 
   render() {
@@ -66,9 +73,11 @@ class App extends Component {
       transcript,
       resetTranscript,
       browserSupportsSpeechRecognition,
+      listening,
       startListening,
       stopListening,
-      recognition
+      recognition,
+      finalTranscript
     } = this.props;
     this.props.recognition.lang = 'cmn-Hans-CN';
 
@@ -88,6 +97,9 @@ class App extends Component {
           <TextEditor
             editorContent={this.state.editorContent}
             changeEditorContent={this.changeEditorContent}
+            transcript={this.props.transcript}
+            resetTranscript={this.props.resetTranscript}
+            finalTranscript={this.props.finalTranscript}
           />
           <Sidebar
             content={this.state.editorContent}
@@ -97,6 +109,9 @@ class App extends Component {
             startListening={this.props.startListening}
             stopListening={this.props.stopListening}
             setDictationLang={this.setDictationLang}
+            listening={this.props.listening}
+            editorContent={this.state.editorContent}
+            changeEditorContent={this.changeEditorContent}
           />
         </div>
       </div>
