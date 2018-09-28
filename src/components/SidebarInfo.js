@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/SidebarInfo.css';
+
 import microphoneIcon from '../img/microphone-icon.png';
+import LanguageList from './languageList';
 
 class SidebarInfo extends React.Component {
   constructor(props) {
@@ -37,11 +39,27 @@ class SidebarInfo extends React.Component {
     }
   };
 
+  selectDictationLang = event => {
+    if (this.state.microphoneAcitve) {
+      this.toggleMicrophone();
+      this.props.setDictationLang(event);
+      this.toggleMicrophone();
+    } else {
+      this.props.setDictationLang(event);
+    }
+  };
+
   render() {
     const pageText =
       this.props.pageLang === 'en'
         ? this.state.pageText.en
         : this.state.pageText.ch;
+
+    const languageList = LanguageList.map(lang => (
+      <option key={lang.languageCode} value={lang.languageCode}>
+        {lang.language}
+      </option>
+    ));
     return (
       <div className="sidebarinfo">
         <div className="dictationLang">
@@ -54,7 +72,12 @@ class SidebarInfo extends React.Component {
           </div>
           <div className="lang-select">
             <p>{pageText.selectLang}</p>
-            <select />
+            <select
+              defaultValue="cmn-Hans-CN"
+              onChange={this.selectDictationLang}
+            >
+              {languageList}
+            </select>
           </div>
         </div>
         <div className="dicatationInfo">

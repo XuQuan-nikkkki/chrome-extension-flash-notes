@@ -15,6 +15,7 @@ class Sidebar extends React.Component {
           startListening={this.props.startListening}
           stopListening={this.props.stopListening}
           resetTranscript={this.props.resetTranscript}
+          setDictationLang={this.props.setDictationLang}
         />
         <SidebarSharing pageLang={this.props.pageLang} />
       </div>

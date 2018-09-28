@@ -56,6 +56,11 @@ class App extends Component {
     });
   };
 
+  setDictationLang = event => {
+    this.props.recognition.lang = event.target.value;
+    console.log(this.props.recognition.lang);
+  };
+
   render() {
     const {
       transcript,
@@ -65,7 +70,7 @@ class App extends Component {
       stopListening,
       recognition
     } = this.props;
-    // this.props.recognition.lang = 'en-US';
+    this.props.recognition.lang = 'cmn-Hans-CN';
 
     if (!browserSupportsSpeechRecognition) {
       this.setState({
@@ -91,6 +96,7 @@ class App extends Component {
             resetTranscript={this.props.resetTranscript}
             startListening={this.props.startListening}
             stopListening={this.props.stopListening}
+            setDictationLang={this.setDictationLang}
           />
         </div>
       </div>

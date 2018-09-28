@@ -22,7 +22,7 @@
   margin-bottom: 30px;
 }
 
-#microphoneIcon {
+div#microphoneIcon {
   width: 70px;
   height: 70px;
   border: 2px solid #8E8D94;
@@ -47,7 +47,12 @@
   flex-direction: column;
   justify-content: center;
   margin-right: 15px;
-  width: 80px;
+  width: 120px;
+}
+
+.lang-select select optiom{
+  /* appearance: menulist-button; */
+  height: 200px;
 }
 
 .lang-select p {
