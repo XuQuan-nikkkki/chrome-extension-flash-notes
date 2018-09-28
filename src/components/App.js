@@ -3,6 +3,7 @@ import '../styles/App.css';
 
 import Header from '../components/Header';
 import TextEditor from '../components/TextEditor';
+import Sidebar from '../components/Sidebar';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class App extends Component {
     if (lang === 'en') {
       this.setState({
         pageLang: {
-          pageLang: 'en',
+          lang: 'en',
           enSelected: 'selected',
           chSelected: ''
         }
@@ -29,7 +30,7 @@ class App extends Component {
     } else {
       this.setState({
         pageLang: {
-          pageLang: 'ch',
+          lang: 'ch',
           enSelected: '',
           chSelected: 'selected'
         }
@@ -50,10 +51,16 @@ class App extends Component {
           pageLang={this.state.pageLang}
           changePageLang={this.changePageLang}
         />
-        <TextEditor
-          editorContent={this.state.editorContent}
-          changeEditorContent={this.changeEditorContent}
-        />
+        <div className="content">
+          <TextEditor
+            editorContent={this.state.editorContent}
+            changeEditorContent={this.changeEditorContent}
+          />
+          <Sidebar
+            content={this.state.editorContent}
+            pageLang={this.state.pageLang.lang}
+          />
+        </div>
       </div>
     );
   }

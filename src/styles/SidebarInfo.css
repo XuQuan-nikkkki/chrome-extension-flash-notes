@@ -1,0 +1,80 @@
+@keyframes animation {
+  0% {
+    background: rgba(245, 0, 31, 1);
+    border: 2px solid rgba(143, 139, 149, 1);
+  }
+  50% {
+    background: rgba(245, 0, 31, 0.85);
+    border: 2px solid rgba(143, 139, 149, 0.85);
+  }
+  100% {
+    background: rgba(245, 0, 31, 1);
+    border: 2px solid rgba(143, 139, 149, 1);
+  }
+
+}
+
+.dictationLang {
+  display: flex;
+  justify-content: space-around;
+  height: 90px;
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+#microphoneIcon {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #8E8D94;
+  background: rgba(222,222,222,0.8);
+  border-radius: 50%;
+  margin: 15px;
+  text-align: center;
+}
+
+#microphoneIcon img {
+  height: 60px;
+  margin-top:3px;
+}
+
+#microphoneIcon.animation {
+  background: red;
+  animation: animation 1s infinite;
+}
+
+.lang-select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+  width: 80px;
+}
+
+.lang-select p {
+  margin: -5px auto 5px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.dictationInfo {
+  margin: 30px auto;
+}
+
+.dictationOn {
+  height: 25px;
+  line-height: 25px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  margin: 2px;
+  padding: 1px;
+}
+
+.dictationText {
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  margin: 1px;
+  height: 100px;
+  border-radius: 0 0 10px 10px;
+  padding: 3px 5px;
+}
