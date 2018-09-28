@@ -57,6 +57,9 @@ class SidebarInfo extends React.Component {
         {lang.language}
       </option>
     ));
+    const dicatationInfoStyle = this.props.listening
+      ? { visibility: 'visible' }
+      : { visibility: 'hidden' };
     return (
       <div className="sidebarinfo">
         <div className="dictationLang">
@@ -77,7 +80,7 @@ class SidebarInfo extends React.Component {
             </select>
           </div>
         </div>
-        <div className="dicatationInfo">
+        <div className="dicatationInfo" style={dicatationInfoStyle}>
           <div className="dictationOn">{pageText.dictationTitle}</div>
           <input
             className="dictationText"

@@ -50,9 +50,8 @@ div#microphoneIcon {
   width: 120px;
 }
 
-.lang-select select optiom{
-  /* appearance: menulist-button; */
-  height: 200px;
+.lang-select select{
+  height: 23px;
 }
 
 .lang-select p {
@@ -83,5 +82,7 @@ div#microphoneIcon {
   height: 100px;
   width: 100%;
   border-radius: 0 0 10px 10px;
-
+  font-size: 15px;
+  padding: 6px;
+  box-sizing: border-box;
 }
