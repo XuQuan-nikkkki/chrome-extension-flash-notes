@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/Header.css';
 
 import logo from '../img/logo.png';
 
-class Header extends Component {
+class Header extends React.Component {
   render() {
     return (
       <div className="header">

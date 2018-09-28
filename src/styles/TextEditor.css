@@ -1,0 +1,20 @@
+.text-editor {
+  width: 60%;
+  min-width: 400px;
+  height: 600px;
+  margin-top: 10px;
+  margin-left: 20%;
+  background: #fff;
+}
+#editor {
+  height: 100%;
+  overflow: hidden;
+}
+div.quill{
+  height: 100%;
+}
+
+div.ql-container {
+  height: 100%;
+  font-size: 16px;
+}

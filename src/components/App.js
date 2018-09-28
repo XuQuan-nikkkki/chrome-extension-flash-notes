@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 
 import Header from '../components/Header';
+import TextEditor from '../components/TextEditor';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends Component {
         lang: 'en',
         enSelected: 'selected',
         chSelected: ''
-      }
+      },
+      editorContent: ''
     };
   }
   changePageLang = lang => {
@@ -34,12 +36,23 @@ class App extends Component {
       });
     }
   };
+
+  changeEditorContent = content => {
+    this.setState({
+      editorContent: content
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <Header
           pageLang={this.state.pageLang}
           changePageLang={this.changePageLang}
+        />
+        <TextEditor
+          editorContent={this.state.editorContent}
+          changeEditorContent={this.changeEditorContent}
         />
       </div>
     );
