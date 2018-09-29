@@ -23,9 +23,9 @@
 
 .save button:hover {
   color: #404040 ;
-  width: 155px;
+  width: 158px;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   box-shadow: 2px 2px 2px #000;
   transition: all 0.3s ease 0s;
 }
