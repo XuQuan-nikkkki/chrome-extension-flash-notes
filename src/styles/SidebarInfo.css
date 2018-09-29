@@ -76,6 +76,7 @@ div#microphoneIcon {
   text-align: center;
   margin: 2px;
   padding: 1px 0;
+  font-size: 14px;
 }
 
 .dictationText {
