@@ -40,6 +40,10 @@ class TextEditor extends React.Component {
   };
 
   render() {
+    const placeholder =
+      this.props.pageLang === 'en'
+        ? 'Click the microphone and speak out your thought, let the editor do the rest.'
+        : '点击右侧的麦克风即可开始语音转换文字，记录您的灵感';
     return (
       <div className="text-editor">
         <div id="editor">
@@ -47,7 +51,7 @@ class TextEditor extends React.Component {
             ref={el => {
               this.reactQuillRef = el;
             }}
-            placeholder="Click the microphone and speak out your thought, let the editor do the rest."
+            placeholder=""
             value={this.props.editorContent}
             onChange={this.props.changeEditorContent}
           />

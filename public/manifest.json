@@ -1,6 +1,6 @@
 {
   "name": "Flash notes",
-  "description": "This extension is a smart text editor which can transcribe your speech to text, helping you to focus on your thoughts and to catch your inspiration in a flash",
+  "description": "Transcribes speech to text, let you focus on your thoughts",
   "version": "0.0.1",
   "manifest_version": 2,
   "background": {

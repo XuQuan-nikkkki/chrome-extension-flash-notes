@@ -86,7 +86,6 @@ class App extends Component {
         editorContent: "This browser doesn't support speech recognition"
       });
     }
-    console.log(this.state.editorContent);
     return (
       <div className="App">
         <Header
@@ -95,6 +94,7 @@ class App extends Component {
         />
         <div className="content">
           <TextEditor
+            pageLang={this.state.pageLang}
             editorContent={this.state.editorContent}
             changeEditorContent={this.changeEditorContent}
             transcript={this.props.transcript}

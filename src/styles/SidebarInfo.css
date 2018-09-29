@@ -1,14 +1,14 @@
 @keyframes animation {
   0% {
-    background: rgba(245, 0, 31, 1);
+    background: rgba(215, 0, 42, 1);
     border: 2px solid rgba(143, 139, 149, 1);
   }
   50% {
-    background: rgba(245, 0, 31, 0.85);
+    background: rgba(215, 0, 42, 0.85);
     border: 2px solid rgba(143, 139, 149, 0.85);
   }
   100% {
-    background: rgba(245, 0, 31, 1);
+    background: rgba(215, 0, 42, 1);
     border: 2px solid rgba(143, 139, 149, 1);
   }
 
@@ -38,7 +38,7 @@ div#microphoneIcon {
 }
 
 #microphoneIcon.animation {
-  background: red;
+  background: rgb(215, 0, 42);
   animation: animation 1s infinite;
 }
 

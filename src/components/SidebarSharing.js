@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/SidebarSharing.css';
 
-import { Helmet } from 'react-helmet';
 let FileSaver = require('file-saver');
 
 class SidebarSharing extends React.Component {
