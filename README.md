@@ -2,6 +2,8 @@
 
 ------
 
+This extension aims to provide a smart text editor which can accepts both keyboard input and voice input. By transcribing users' speech to text, it can help users to catch their inspiration in a flash and to improve their productivity.
+
 这款文字编辑器插件能够接受文字输入和语音输入。其中，语音输入功能能够将语音转换成文字，帮助用户捕捉他们转瞬即逝的灵感，从而提高工作效率。
 
 ### Quick Overview / 产品功能
@@ -25,3 +27,15 @@
 #### Page language switching
 
 - The extension has both English version and Chinese version / 提供中英文两种语言界面
+
+### Based on  / 使用开源库
+
+------
+
+- 语音识别API：[React Speech Recognition](https://github.com/FoundersFactory/react-speech-recognition)
+- Quill文字编辑器： [React Quill](https://github.com/zenoamaro/react-quill)
+- 文件保存：[FileSaver.js](https://github.com/eligrey/FileSaver.js/)
+
+
+
+### 
