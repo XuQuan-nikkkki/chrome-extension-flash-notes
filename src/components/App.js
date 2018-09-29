@@ -32,6 +32,9 @@ class App extends Component {
       content: ''
     };
   }
+  componentDidMount() {
+    this.props.recognition.lang = 'cmn-Hans-CN';
+  }
   changePageLang = lang => {
     if (lang === 'en') {
       this.setState({
@@ -79,7 +82,6 @@ class App extends Component {
       recognition,
       finalTranscript
     } = this.props;
-    this.props.recognition.lang = 'cmn-Hans-CN';
 
     if (!browserSupportsSpeechRecognition) {
       this.setState({
@@ -103,7 +105,7 @@ class App extends Component {
             getContent={this.getContent}
           />
           <Sidebar
-            content={this.state.editorContent}
+            content={this.state.content}
             pageLang={this.state.pageLang.lang}
             transcript={this.props.transcript}
             resetTranscript={this.props.resetTranscript}
