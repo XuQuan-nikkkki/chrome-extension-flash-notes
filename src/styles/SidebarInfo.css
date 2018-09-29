@@ -23,7 +23,7 @@
 }
 
 div#microphoneIcon {
-  width: 70px;
+  min-width: 70px;
   height: 70px;
   border: 2px solid #8E8D94;
   background: rgba(222,222,222,0.8);

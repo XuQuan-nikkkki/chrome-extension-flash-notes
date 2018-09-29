@@ -7,12 +7,16 @@ let FileSaver = require('file-saver');
 class SidebarSharing extends React.Component {
   saveFile = () => {
     let file = new File([this.props.content], 'Flash Notes file', {
-      type: 'text/plain;charset:utf-8'
+      type: 'text/plain;charset=utf-8'
     });
     FileSaver.saveAs(file);
   };
 
   render() {
+    const style =
+      this.props.editorContent !== ''
+        ? { visibility: 'visible' }
+        : { visibility: 'hidden' };
     return (
       <div className="sidebar-sharing">
         <Helmet>
@@ -26,26 +30,8 @@ class SidebarSharing extends React.Component {
         </Helmet>
         {this.props.pageLang === 'en' && <h4>Save to</h4>}
         {this.props.pageLang === 'ch' && <h4>保存到：</h4>}
-        <div className="icons">
-          <ul>
-            <li>
-              <button onClick={this.saveFile}>保存文件</button>
-            </li>
-            <li>
-              <a
-                href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png"
-                className="dropbox-saver"
-              />
-            </li>
-            <li>
-              <div
-                className="g-savetodrive"
-                data-src="//example.com/path/to/myfile.pdf"
-                data-filename="My Statement.pdf"
-                data-sitename="Flash Notes"
-              />
-            </li>
-          </ul>
+        <div className="save" style={style}>
+          <button onClick={this.saveFile}>保存文件</button>
         </div>
       </div>
     );

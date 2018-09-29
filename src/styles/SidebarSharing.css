@@ -1,24 +1,31 @@
 .sidebar-sharing{
-  margin-top: 30px;
+  margin: 30px auto;
+
 }
 
 .sidebar-sharing h4 {
   color: #fff;
+  text-align: center;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 5px;
+
+.save button {
+  margin: 10px auto;
+  width: 150px;
+  height: 30px;
+  background: #DEDEDE;
+  color: #000;
+  border-radius: 6px;
+  display: block;
+  letter-spacing: 1px;
+  box-shadow: 1px 1px 1px #000;
 }
 
-li{
-  list-style: none;
-  padding: 5px;
+.save button:hover {
+  color: #404040 ;
+  width: 155px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  box-shadow: 2px 2px 2px #000;
+  transition: all 0.3s ease 0s;
 }
-
-li button{
-  padding: 5px;
-  border-radius: 5px;
-}
-
