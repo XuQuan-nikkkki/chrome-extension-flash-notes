@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Flash notes",
+  "description": "This extension is a smart text editor which can transcribe your speech to text, helping you to focus on your thoughts and to catch your inspiration in a flash",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {},
   "icons": [
     {
-      "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "16": "../src/img/logo-16.png",
+      "48": "../src/img/logo-48.png",
+      "128": "../src/img/logo-128.png",
+      "512": "../src/img/logo-512.png"
     }
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "permissions": [
+    "tabs"
+  ]
 }
