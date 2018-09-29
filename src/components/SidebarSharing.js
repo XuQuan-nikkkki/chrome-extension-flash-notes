@@ -13,10 +13,8 @@ class SidebarSharing extends React.Component {
   };
 
   render() {
-    const style =
-      this.props.editorContent !== ''
-        ? { visibility: 'visible' }
-        : { visibility: 'hidden' };
+    const shareText =
+      this.props.pageLang === 'en' ? 'Save to computer' : '保存文件';
     return (
       <div className="sidebar-sharing">
         <Helmet>
@@ -30,8 +28,8 @@ class SidebarSharing extends React.Component {
         </Helmet>
         {this.props.pageLang === 'en' && <h4>Save to</h4>}
         {this.props.pageLang === 'ch' && <h4>保存到：</h4>}
-        <div className="save" style={style}>
-          <button onClick={this.saveFile}>保存文件</button>
+        <div className="save">
+          <button onClick={this.saveFile}>{shareText}</button>
         </div>
       </div>
     );
